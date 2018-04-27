@@ -9,10 +9,10 @@ use SilverStripe\ORM\DataExtension;
  * @author Hudhaifa Shatnawi <hudhaifa.shatnawi@gmail.com>
  * @version 1.0, Apr 27, 2018 - 12:20:34 AM
  */
-class ReferenceExtension_BelongsMany
+class ReferenceExtension_Many
         extends DataExtension {
 
-    private static $belongs_many_many = [
+    private static $has_many = [
         'References' => Reference::class
     ];
 

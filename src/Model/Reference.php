@@ -18,7 +18,7 @@ class Reference
         'Page' => 'Int',
         'Link' => 'Varchar(255)',
     ];
-    private static $belongs_many_many = [
+    private static $has_one = [
         'Objects' => DataObject::class,
     ];
     private static $translate = [

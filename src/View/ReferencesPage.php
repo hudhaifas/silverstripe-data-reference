@@ -1,5 +1,8 @@
 <?php
 
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Security\Member;
+
 /**
  *
  * @author Hudhaifa Shatnawi <hudhaifa.shatnawi@gmail.com>
@@ -13,7 +16,11 @@ class ReferencesPage
     private static $description = 'Adds references to your website.';
 
     public function canCreate($member = null, $context = []) {
-        return true;
+        if (!$member || !(is_a($member, Member::class)) || is_numeric($member)) {
+            $member = Member::currentUserID();
+        }
+
+        return (DataObject::get($this->ClassName)->count() > 0) ? false : true;
     }
 
 }

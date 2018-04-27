@@ -8,7 +8,7 @@
 class ReferencesPage
         extends DataObjectPage {
 
-    private static $icon = "hudhaifas/data-reference: res/images/reference.png";
+    private static $icon = "hudhaifas/silverstripe-data-reference: res/images/reference.png";
     private static $allowed_children = 'none';
     private static $description = 'Adds references to your website.';
 

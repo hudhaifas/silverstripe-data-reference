@@ -15,6 +15,6 @@ class ReferencesAdmin
     ];
     private static $url_segment = 'references';
     private static $menu_title = "References";
-    private static $menu_icon = "hudhaifas/data-reference: res/images/reference.png";
+    private static $menu_icon = "hudhaifas/silverstripe-data-reference: res/images/reference.png";
 
 }

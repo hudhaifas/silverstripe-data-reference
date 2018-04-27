@@ -1,7 +1,5 @@
 <?php
 
-use SilverStripe\View\Requirements;
-
 /**
  *
  * @author Hudhaifa Shatnawi <hudhaifa.shatnawi@gmail.com>

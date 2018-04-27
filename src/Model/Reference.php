@@ -1,5 +1,8 @@
 <?php
 
+use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\DataObject;
+
 /**
  *
  * @author Hudhaifa Shatnawi <hudhaifa.shatnawi@gmail.com>

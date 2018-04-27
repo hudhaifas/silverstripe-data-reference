@@ -1,0 +1,29 @@
+{
+    "name": "hudhaifas/silverstripe-data-reference",
+    "description": "Document data with references.",
+    "type": "silverstripe-vendormodule",
+    "homepage": "https://github.com/hudhaifas/silverstripe-data-reference",
+    "keywords": ["silverstripe", "dataobject", "page"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hudhaifa Shatnawi",
+            "email": "me@hudhaifa.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/hudhaifas/silverstripe-data-reference/issues"
+    },
+    "require": {
+        "silverstripe/framework": "^4",
+        "silverstripe/cms": "^4",
+        "silverstripe/vendor-plugin": "^1.0",
+        "hudhaifas/silverstripe-dataobject-manager": "dev-master"
+    },
+    "extra": {
+        "installer-name": "data-reference",
+        "expose": [
+            "res/images"
+        ]
+    }
+}

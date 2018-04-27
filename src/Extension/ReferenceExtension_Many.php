@@ -25,7 +25,7 @@ class ReferenceExtension_Many
                         ->customise([
                             'Results' => $list
                         ])
-                        ->renderWith('Includes/List_MiniGrid')
+                        ->renderWith('Includes/References')
             ];
         }
     }

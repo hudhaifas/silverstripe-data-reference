@@ -1,5 +1,7 @@
 ar:
   Reference:
+    PLURALNAME: 'المراجع'
+    SINGULARNAME: 'المراجع'
     NAME: 'الاسم'
     DESCRIPTION: 'الوصف'
     PAGE: 'الصفحة'

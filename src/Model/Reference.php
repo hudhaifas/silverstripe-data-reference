@@ -17,6 +17,7 @@ class Reference
         'Details' => 'Varchar(255)',
         'Page' => 'Int',
         'Link' => 'Varchar(255)',
+        'Date' => 'Date',
     ];
     private static $has_one = [
         'Objects' => DataObject::class,
@@ -24,7 +25,8 @@ class Reference
     private static $translate = [
         'Name',
         'Description',
-        'Details'
+        'Details',
+        'Date',
     ];
     private static $searchable_fields = [
         'Name' => [
@@ -40,6 +42,7 @@ class Reference
         $labels['Description'] = _t('Reference.DESCRIPTION', 'Description');
         $labels['Page'] = _t('Reference.PAGE', 'Page');
         $labels['Link'] = _t('Reference.LINK', 'Link');
+        $labels['Date'] = _t('Reference.DATE', 'Date');
 
         return $labels;
     }

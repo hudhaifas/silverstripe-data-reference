@@ -1,5 +1,7 @@
 en:
   Reference:
+    PLURALNAME: 'References'
+    SINGULARNAME: 'References'
     NAME: 'Name'
     DESCRIPTION: 'Description'
     PAGE: 'Page'

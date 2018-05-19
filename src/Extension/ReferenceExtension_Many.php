@@ -16,6 +16,18 @@ class ReferenceExtension_Many
         'References' => Reference::class
     ];
 
+    public function updateCMSFields(FieldList $fields) {
+        $field = $fields->fieldByName('Root.References.References');
+        if ($field != null) {
+            $config = $field->getConfig();
+
+            $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
+            $config->addComponent(new GridFieldAddExistingAutocompleter('buttons-before-right', ['Name']));
+
+            $field->setConfig($config);
+        }
+    }
+
     public function extraTabs(&$lists) {
         $list = $this->owner->References();
         if ($list->Count()) {
@@ -28,18 +40,18 @@ class ReferenceExtension_Many
                         ->renderWith('Includes/References')
             ];
         }
+
+        if ($this->owner->canEdit()) {
+            $this->insertAddTab($lists);
+        }
     }
 
-    public function updateCMSFields(FieldList $fields) {
-        $field = $fields->fieldByName('Root.References.References');
-        if ($field != null) {
-            $config = $field->getConfig();
-
-            $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
-            $config->addComponent(new GridFieldAddExistingAutocompleter('buttons-before-right', ['Name']));
-
-            $field->setConfig($config);
-        }
+    private function insertAddTab(&$lists) {
+        $form = ReferenceService::singleton()->add($this->owner);
+        $lists[] = [
+            'Title' => _t('Reference.ADD_REFERENCE', 'Add Reference'),
+            'Content' => $form
+        ];
     }
 
 }

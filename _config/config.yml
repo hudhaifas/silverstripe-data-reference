@@ -1,3 +1,7 @@
 ---
 Name: data-reference
 ---
+
+SilverStripe\Control\Director:
+  rules:
+    'api-reference//$Action/$ID/$Name': 'ReferenceService'

@@ -1,5 +1,6 @@
 ---
 Name: data-reference
+After: dataobject-manager
 ---
 
 SilverStripe\Control\Director:

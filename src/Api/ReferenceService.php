@@ -53,7 +53,7 @@ class ReferenceService
 
         // Create action
         $actions = new FieldList(
-                FormAction::create('doAddReference', _t('Genealogy.ADD', 'Add'))
+                FormAction::create('doAddReference', _t('Reference.ADD', 'Add'))
                         ->addExtraClass('btn-primary btn-block-center')
         );
 

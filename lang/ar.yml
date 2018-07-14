@@ -9,6 +9,8 @@ ar:
     DESCRIPTION: 'الوصف'
     PAGE: 'الصفحة'
     LINK: 'الرابط'
+    DETAILS: 'تفاصيل'
+    DATE: 'التاريخ'
     REFERENCES: 'المراجع'
     ADD_REFERENCE: 'إضافة مرجع'
     ADD: 'إضافة'

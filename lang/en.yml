@@ -9,6 +9,8 @@ en:
     DESCRIPTION: 'Description'
     PAGE: 'Page'
     LINK: 'Link'
+    DETAILS: 'Details'
+    DATE: 'Date'
     REFERENCES: 'References'
     ADD_REFERENCE: 'Add Reference'
     ADD: 'Add'

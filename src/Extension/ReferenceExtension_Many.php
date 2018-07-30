@@ -32,6 +32,7 @@ class ReferenceExtension_Many
         $list = $this->owner->References();
         if ($list->Count()) {
             $lists[] = [
+                'Rank' => 10,
                 'Title' => _t('Reference.REFERENCES', 'References'),
                 'Content' => $this->owner
                         ->customise([
@@ -49,6 +50,7 @@ class ReferenceExtension_Many
     private function insertAddTab(&$lists) {
         $form = ReferenceService::singleton()->add($this->owner);
         $lists[] = [
+            'Rank' => 2,
             'Title' => _t('Reference.ADD_REFERENCE', 'Add Reference'),
             'Content' => $form
         ];

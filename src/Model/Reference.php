@@ -13,6 +13,9 @@ class Reference
 
     private static $db = [
         'Name' => 'Varchar(255)',
+        'Author' => 'Varchar(255)',
+        'Edition' => 'Varchar(255)',
+        'Publisher' => 'Varchar(255)',
         'Description' => 'Varchar(255)',
         'Details' => 'Varchar(255)',
         'Page' => 'Int',
@@ -24,12 +27,19 @@ class Reference
     ];
     private static $translate = [
         'Name',
+        'Author',
+        'Edition',
+        'Publisher',
         'Description',
         'Details',
         'Date',
     ];
     private static $searchable_fields = [
         'Name' => [
+            'field' => TextField::class,
+            'filter' => 'PartialMatchFilter'
+        ],
+        'Author' => [
             'field' => TextField::class,
             'filter' => 'PartialMatchFilter'
         ]
@@ -39,6 +49,9 @@ class Reference
         $labels = parent::fieldLabels($includerelations);
 
         $labels['Name'] = _t('Reference.NAME', 'Name');
+        $labels['Author'] = _t('Reference.AUTHOR', 'Author');
+        $labels['Edition'] = _t('Reference.EDITION', 'Edition');
+        $labels['Publisher'] = _t('Reference.PUBLISHER', 'Publisher');
         $labels['Description'] = _t('Reference.DESCRIPTION', 'Description');
         $labels['Page'] = _t('Reference.PAGE', 'Page');
         $labels['Link'] = _t('Reference.LINK', 'Link');

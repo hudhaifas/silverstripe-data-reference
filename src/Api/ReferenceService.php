@@ -9,7 +9,7 @@ use SilverStripe\Forms\HiddenField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextField;
-use SilverStripe\GraphQL\Controller;
+use SilverStripe\Control\Controller;
 use SilverStripe\ORM\DataObject;
 
 /**
@@ -53,7 +53,7 @@ class ReferenceService
 
         // Create action
         $actions = new FieldList(
-                FormAction::create('doAddReference', _t('Genealogy.ADD', 'Add'))
+                FormAction::create('doAddReference', _t('Reference.ADD', 'Add'))
                         ->addExtraClass('btn-primary btn-block-center')
         );
 
@@ -82,12 +82,15 @@ class ReferenceService
         $items[] = HiddenField::create('OwnerClass', 'OwnerClass', $ownerClass);
         $items[] = HiddenField::create('OwnerID', 'OwnerID', $ownerID);
 
-        $items[] = TextField::create('Name', _t('References.NAME', 'Name'));
-        $items[] = TextField::create('Description', _t('References.DESCRIPTION', 'Description'));
-        $items[] = TextField::create('Details', _t('References.DETAILS', 'Details'));
-        $items[] = NumericField::create('Page', _t('References.PAGE', 'Page'));
-        $items[] = TextField::create('Link', _t('References.LINK', 'Link'));
-        $items[] = DateField::create('Date', _t('References.DATE', 'Date'));
+        $items[] = TextField::create('Name', _t('Reference.NAME', 'Name'));
+        $items[] = TextField::create('Author', _t('Reference.AUTHOR', 'Author'));
+        $items[] = TextField::create('Edition', _t('Reference.EDITION', 'Edition'));
+        $items[] = TextField::create('Publisher', _t('Reference.PUBLISHER', 'Publisher'));
+        $items[] = TextField::create('Description', _t('Reference.DESCRIPTION', 'Description'));
+        $items[] = TextField::create('Details', _t('Reference.DETAILS', 'Details'));
+        $items[] = NumericField::create('Page', _t('Reference.PAGE', 'Page'));
+        $items[] = TextField::create('Link', _t('Reference.LINK', 'Link'));
+        $items[] = DateField::create('Date', _t('Reference.DATE', 'Date'));
 
         return $items;
     }

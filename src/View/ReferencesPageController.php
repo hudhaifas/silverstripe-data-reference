@@ -8,7 +8,7 @@
 class ReferencesPageController
         extends DataObjectPageController {
 
-    protected function searchObjects($list, $keywords) {
+    public function searchObjects($list, $keywords) {
         return Reference::get()->filterAny([
                     'Name:PartialMatch' => $keywords,
                     'Description:PartialMatch' => $keywords,
@@ -17,8 +17,12 @@ class ReferencesPageController
         ]);
     }
 
-    protected function getObjectsList() {
+    public function getObjectsList() {
         return Reference::get();
+    }
+
+    public function isSearchable() {
+        return false;
     }
 
 }

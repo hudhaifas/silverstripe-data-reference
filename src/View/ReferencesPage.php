@@ -2,6 +2,7 @@
 
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 
 /**
  *
@@ -17,7 +18,7 @@ class ReferencesPage
 
     public function canCreate($member = null, $context = []) {
         if (!$member || !(is_a($member, Member::class)) || is_numeric($member)) {
-            $member = Member::currentUserID();
+            $member = Security::getCurrentUser()?->ID;
         }
 
         return (DataObject::get($this->ClassName)->count() > 0) ? false : true;

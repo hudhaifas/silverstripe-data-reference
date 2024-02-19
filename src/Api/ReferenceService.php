@@ -9,7 +9,7 @@ use SilverStripe\Forms\HiddenField;
 use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextField;
-use SilverStripe\GraphQL\Controller;
+use SilverStripe\Control\Controller;
 use SilverStripe\ORM\DataObject;
 
 /**

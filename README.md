@@ -10,8 +10,8 @@ Document data with references.
 ## Usage
 
 ### Requirements
-- SilverStripe Framework 4.x
-- SilverStripe CMS 4.x
+- SilverStripe Framework 5.x
+- SilverStripe CMS 5.x
 - Dataobject Manager
 
 ### Installation

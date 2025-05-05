@@ -32,28 +32,35 @@ class ReferenceExtension_Many
         $list = $this->owner->References();
         if ($list->Count()) {
             $lists[] = [
+                'Key' => 'references',
                 'Rank' => 10,
                 'Title' => _t('Reference.REFERENCES', 'References'),
-                'Content' => $this->owner
-                        ->customise([
-                            'Results' => $list
-                        ])
-                        ->renderWith('Includes/References')
             ];
         }
 
         if ($this->owner->canEdit()) {
-            $this->insertAddTab($lists);
+            $lists[] = [
+                'Key' => 'add_reference',
+                'Rank' => 2,
+                'Title' => _t('Reference.ADD_REFERENCE', 'Add Reference'),
+            ];
         }
     }
 
-    private function insertAddTab(&$lists) {
-        $form = ReferenceService::singleton()->add($this->owner);
-        $lists[] = [
-            'Rank' => 2,
-            'Title' => _t('Reference.ADD_REFERENCE', 'Add Reference'),
-            'Content' => $form
-        ];
-    }
+    public function extraTabContent($tabKey) {
+        switch ($tabKey) {
+            case 'references':
+                $list = $this->owner->References();
+                return $this->owner
+                    ->customise([
+                        'Results' => $list
+                    ])
+                    ->renderWith('Includes/References');
 
+            case 'add_reference':
+                return ReferenceService::singleton()->add($this->owner);
+        }
+
+        return null;
+    }
 }
